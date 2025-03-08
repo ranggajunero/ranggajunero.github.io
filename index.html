@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="home">
 
 <head>
   <meta charset="utf-8">
@@ -28,7 +28,7 @@
             <a class="nav-link active" aria-current="page" href="#home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#about" id="aboutTarget">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#projects">Projects</a>
@@ -179,6 +179,20 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
   </script>
 
+<script>
+  // Ambil semua elemen dengan class "nav-link"
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  // Tambahkan event listener ke setiap link
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      // Hapus class "active" dari semua link
+      navLinks.forEach((nav) => nav.classList.remove("active"));
+      // Tambahkan class "active" ke tombol yang diklik
+      this.classList.add("active");
+    });
+  });
+</script>
 </body>
 
 </html>
